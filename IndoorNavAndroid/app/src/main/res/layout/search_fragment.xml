@@ -22,7 +22,7 @@
         app:boxStrokeColor="@color/border"
         app:boxStrokeWidth="1dp"
         app:boxStrokeWidthFocused="1dp"
-        app:endIconDrawable="@drawable/search_icon_24dp"
+        app:endIconDrawable="@drawable/ic_search_24dp"
         app:endIconMode="custom"
         app:endIconTint="@color/interface_secondary"
         app:layout_constraintEnd_toEndOf="parent"

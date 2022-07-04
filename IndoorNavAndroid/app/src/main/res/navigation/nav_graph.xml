@@ -8,25 +8,15 @@
 
     <fragment
         android:id="@+id/navigation_map"
-        android:name="com.example.indoornavigationar.ui.MapFragment"
+        android:name="com.izhxx.indoornavarandroid.ui.MapFragment"
         tools:layout="@layout/map_fragment">
         <action
-            android:id="@+id/action_navigation_map_to_search_navigation"
-            app:destination="@id/navigation_search">
-
-            <argument
-                android:name="isOpenFromMap"
-                app:argType="boolean"/>
-        </action>
+            android:id="@+id/action_map_to_search"
+            app:destination="@id/navigation_search"/>
 
         <action
-            android:id="@+id/action_navigation_map_to_points_enter"
-            app:destination="@id/navigation_points_enter">
-
-            <argument
-                android:name="isOpenFromMap"
-                app:argType="boolean"/>
-        </action>
+            android:id="@+id/action_map_to_point_selection"
+            app:destination="@id/navigation_point_selection"/>
     </fragment>
 
     <fragment
@@ -34,55 +24,26 @@
         android:name="com.example.indoornavigationar.ui.SearchFragment"
         tools:layout="@layout/search_fragment">
 
-        <argument
-            android:name="isOpenFromMap"
-            app:argType="boolean"
-            android:defaultValue="true"/>
-
         <action
-            android:id="@+id/action_search_navigation_to_navigation_map"
+            android:id="@+id/action_search_to_map"
             app:destination="@id/navigation_map"/>
 
         <action
-            android:id="@+id/action_search_navigation_to_points_enter"
-            app:destination="@id/navigation_points_enter">
-
-            <argument
-                android:name="isOpenFromMap"
-                app:argType="boolean"/>
-
-            <argument
-                android:name="pointPositionInDatabase"
-                app:argType="integer"/>
-
-        </action>
+            android:id="@+id/action_search_to_point_selection"
+            app:destination="@id/navigation_point_selection"/>
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_points_enter"
+        android:id="@+id/navigation_point_selection"
         android:name="com.example.indoornavigationar.ui.PointsEnterFragment"
         tools:layout="@layout/point_selection_fragment">
 
-        <argument
-            android:name="isOpenFromMap"
-            app:argType="boolean"
-            android:defaultValue="true"/>
-
-        <argument
-            android:name="pointPositionInDatabase"
-            app:argType="integer"
-            android:defaultValue="-1"/>
         <action
-            android:id="@+id/action_points_enter_to_search_navigation"
-            app:destination="@id/navigation_search">
-
-            <argument
-                android:name="isOpenFromMap"
-                app:argType="boolean"/>
-        </action>
+            android:id="@+id/action_point_selection_to_search"
+            app:destination="@id/navigation_search"/>
 
         <action
-            android:id="@+id/action_points_enter_to_navigation_map"
+            android:id="@+id/action_point_selection_to_map"
             app:destination="@id/navigation_map"/>
     </fragment>
 

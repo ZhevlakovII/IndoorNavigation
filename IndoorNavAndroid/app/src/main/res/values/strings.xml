@@ -15,4 +15,5 @@
     <string name="history_icon_view">History Icon View</string>
     <string name="map_pin_icon_view">MapPin Icon View</string>
     <string name="settings_text">In this version settings unavailable</string>
+    <string name="icon_view">iconsView</string>
 </resources>

@@ -27,9 +27,10 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_graph) as NavHostFragment
         val navController = navHostFragment.navController
 
+        //Change bottom navigation visibility if destination search fragment or point selection
         navController.addOnDestinationChangedListener { _, destination, _ ->
             if (destination.id == R.id.navigation_search ||
-                destination.id == R.id.navigation_points_enter) {
+                destination.id == R.id.navigation_points_selection) {
                 binding.bottomNavigation.visibility = View.GONE
             } else {
                 binding.bottomNavigation.visibility = View.VISIBLE
@@ -44,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         _binding = null
     }
 
+    //Method from changing bottom nav visibility
     fun hideActivity(cardActive: Boolean) {
         if (cardActive)
             binding.bottomNavigation.visibility = View.GONE
