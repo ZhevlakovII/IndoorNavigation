@@ -1,14 +1,11 @@
 package com.izhxx.indoornavarandroid.data.databases.searchhistorydatabase
 
-import androidx.room.ColumnInfo
-import androidx.room.Entity
-import androidx.room.Fts4
-import androidx.room.PrimaryKey
+import androidx.room.*
 
 @Entity(tableName = "search_history")
-@Fts4(contentEntity = SearchHistory::class)
+@Fts4(notIndexed = ["id"], tokenizer = FtsOptions.TOKENIZER_UNICODE61)
 data class SearchHistory(
-    @PrimaryKey
+    @ColumnInfo(name = "id")
     val searchId: Int,
 
     @ColumnInfo(name = "name")

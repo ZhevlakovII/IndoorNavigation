@@ -16,12 +16,12 @@
 
         <action
             android:id="@+id/action_map_to_point_selection"
-            app:destination="@id/navigation_point_selection"/>
+            app:destination="@id/navigation_points_selection"/>
     </fragment>
 
     <fragment
         android:id="@+id/navigation_search"
-        android:name="com.example.indoornavigationar.ui.SearchFragment"
+        android:name="com.izhxx.indoornavarandroid.ui.SearchFragment"
         tools:layout="@layout/search_fragment">
 
         <action
@@ -30,12 +30,12 @@
 
         <action
             android:id="@+id/action_search_to_point_selection"
-            app:destination="@id/navigation_point_selection"/>
+            app:destination="@id/navigation_points_selection"/>
     </fragment>
 
     <fragment
-        android:id="@+id/navigation_point_selection"
-        android:name="com.example.indoornavigationar.ui.PointsEnterFragment"
+        android:id="@+id/navigation_points_selection"
+        android:name="com.izhxx.indoornavarandroid.ui.PointsSelectionFragment"
         tools:layout="@layout/point_selection_fragment">
 
         <action
@@ -49,12 +49,12 @@
 
     <fragment
         android:id="@+id/navigation_ar_mode"
-        android:name="com.example.indoornavigationar.ui.ARModeFragment"
+        android:name="com.izhxx.indoornavarandroid.ui.ARModeFragment"
         tools:layout="@layout/ar_mode_fragment"/>
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.example.indoornavigationar.ui.SettingsFragment"
+        android:name="com.izhxx.indoornavarandroid.ui.SettingsFragment"
         tools:layout="@layout/settings_fragment"/>
 
 </navigation>

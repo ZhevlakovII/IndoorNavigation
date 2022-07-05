@@ -1,4 +1,4 @@
-package com.izhxx.indoornavarandroid.ui
+package com.izhxx.indoornavarandroid
 
 import android.os.Bundle
 import android.view.View
@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.izhxx.indoornavarandroid.R
 import com.izhxx.indoornavarandroid.databinding.MainActivityBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = binding.bottomNavigation
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_graph) as NavHostFragment
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_host) as NavHostFragment
         val navController = navHostFragment.navController
 
         //Change bottom navigation visibility if destination search fragment or point selection

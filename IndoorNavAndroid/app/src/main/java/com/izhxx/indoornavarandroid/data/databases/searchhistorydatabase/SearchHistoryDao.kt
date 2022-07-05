@@ -7,12 +7,12 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface SearchHistoryDao {
-    @Query("SELECT * FROM search_history ORDER BY searchedLocationId DESC")
-    suspend fun getAllHistory(): Flow<List<SearchHistory>>
+    @Query("SELECT * FROM search_history ORDER BY id DESC")
+    fun getAllHistory(): Flow<List<SearchHistory>>
 
-    @Query("SELECT * FROM search_history ORDER BY searchedLocationId DESC LIMIT 1")
-    suspend fun getDatabaseLastId(): Int
+    @Query("SELECT * FROM search_history ORDER BY id DESC LIMIT 1")
+    fun getDatabaseLastId(): Int
 
     @Insert
-    suspend fun insertSearchedLocation(searchLocation: SearchHistory)
+    fun insertSearchedLocation(searchLocation: SearchHistory)
 }

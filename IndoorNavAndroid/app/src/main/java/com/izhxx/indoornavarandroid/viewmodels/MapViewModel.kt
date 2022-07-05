@@ -16,6 +16,7 @@ import javax.inject.Inject
 class MapViewModel @Inject internal constructor(
     application: Application
 ): ViewModel() {
+    //Create value for TileStreamProvider (opening and displaying map tiles)
     private val mapTiles = TileStreamProvider { row, col, zoomLvl ->
         try {
             application.applicationContext.assets.open("map_assets/$zoomLvl/$row/$col.png")
@@ -24,6 +25,7 @@ class MapViewModel @Inject internal constructor(
         }
     }
 
+    //Create state for MapCompose
     val mapState: MapState by mutableStateOf(
         MapState(5, 7092, 7160).apply {
             addLayer(mapTiles)

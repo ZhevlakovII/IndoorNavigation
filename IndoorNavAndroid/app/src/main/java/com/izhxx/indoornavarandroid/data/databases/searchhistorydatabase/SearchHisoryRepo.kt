@@ -7,9 +7,9 @@ import javax.inject.Singleton
 class SearchItemsRepo @Inject constructor(
     private val searchHistoryDao: SearchHistoryDao
 ) {
-    suspend fun getAllHistory() = searchHistoryDao.getAllHistory()
+    fun getAllHistory() = searchHistoryDao.getAllHistory()
 
-    suspend fun getDatabaseLastId() = searchHistoryDao.getDatabaseLastId()
+    fun getDatabaseLastId() = searchHistoryDao.getDatabaseLastId()
 
-    suspend fun insertSearchedLocation(searchLocation: SearchHistory) = searchHistoryDao.insertSearchedLocation(searchLocation)
+    fun insertSearchedLocation(searchLocation: SearchHistory) = searchHistoryDao.insertSearchedLocation(searchLocation)
 }
