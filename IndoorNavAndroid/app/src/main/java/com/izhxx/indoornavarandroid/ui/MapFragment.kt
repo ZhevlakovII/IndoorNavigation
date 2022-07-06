@@ -7,15 +7,20 @@ import android.view.ViewGroup
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
-import com.google.accompanist.appcompattheme.AppCompatTheme
+import com.izhxx.indoornavarandroid.R
 import com.izhxx.indoornavarandroid.databinding.MapFragmentBinding
 import com.izhxx.indoornavarandroid.viewmodels.MapViewModel
+import com.izhxx.indoornavarandroid.viewmodels.SharedViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import ovh.plrapps.mapcompose.ui.MapUI
 
+@AndroidEntryPoint
 class MapFragment: Fragment() {
     private val mapViewModel: MapViewModel by viewModels()
+    private val sharedViewModel: SharedViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -24,13 +29,11 @@ class MapFragment: Fragment() {
     ) : View {
         val binding = MapFragmentBinding.inflate(inflater, container, false)
 
-        binding.mapComposeView.setContent {
-            AppCompatTheme {
-                MapContainer(viewModel = mapViewModel)
-            }
-        }
+        binding.mapComposeView.setContent { MapContainer(viewModel = mapViewModel) }
         binding.searchButton.setOnClickListener { searchButtonClickListener() }
         binding.pickPointButton.setOnClickListener { pickPointButtonClickListener() }
+
+        subscribeUi(binding)
 
         return binding.root
     }
@@ -38,11 +41,33 @@ class MapFragment: Fragment() {
     private fun pickPointButtonClickListener() {
         val clickDestination = MapFragmentDirections.actionMapToPointSelection()
         view?.findNavController()?.navigate(clickDestination)
+
+        mapViewModel.changeTapState(true)
     }
 
     private fun searchButtonClickListener() {
         val clickDestination = MapFragmentDirections.actionMapToSearch()
         view?.findNavController()?.navigate(clickDestination)
+    }
+
+    private fun subscribeUi(binding: MapFragmentBinding) {
+        mapViewModel.locations.observe(viewLifecycleOwner) { locationList ->
+            if (locationList.isEmpty())
+                mapViewModel.changeTapActivate(false)
+            else
+                mapViewModel.changeTapActivate(true)
+        }
+
+        mapViewModel.isTapOnMap.observe(viewLifecycleOwner) { tapState ->
+            if (tapState) {
+                binding.navigationCard.visibility = View.VISIBLE
+                sharedViewModel.changeCardState(tapState)
+            }
+            else {
+                binding.navigationCard.visibility = View.GONE
+                sharedViewModel.changeCardState(tapState)
+            }
+        }
     }
 }
 

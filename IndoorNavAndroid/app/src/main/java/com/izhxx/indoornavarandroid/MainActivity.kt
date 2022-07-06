@@ -2,23 +2,23 @@ package com.izhxx.indoornavarandroid
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.izhxx.indoornavarandroid.databinding.MainActivityBinding
+import com.izhxx.indoornavarandroid.viewmodels.SharedViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-    private var _binding: MainActivityBinding? = null
-
-    private val binding get() = _binding!!
+    private val sharedViewModel: SharedViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        _binding = MainActivityBinding.inflate(layoutInflater)
+        val binding = MainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.bottomNavigation
@@ -36,19 +36,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
         navView.setupWithNavController(navController)
+
+        observer(binding)
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-
-        _binding = null
+    //Observer cardState in sharedVM to change bottom nav visibility
+    private fun observer(binding: MainActivityBinding) {
+        sharedViewModel.cardState.observe(this) { cardState ->
+            if (cardState) binding.bottomNavigation.visibility = View.GONE
+            else binding.bottomNavigation.visibility = View.VISIBLE
+        }
     }
 
-    //Method from changing bottom nav visibility
-    fun hideActivity(cardActive: Boolean) {
-        if (cardActive)
-            binding.bottomNavigation.visibility = View.GONE
-        else
-            binding.bottomNavigation.visibility = View.VISIBLE
-    }
 }

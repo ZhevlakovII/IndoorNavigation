@@ -1,6 +1,7 @@
 package com.izhxx.indoornavarandroid.data.databases
 
 import android.content.Context
+import androidx.room.AutoMigration
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -17,7 +18,11 @@ import com.izhxx.indoornavarandroid.utilites.JSON_DATA_FILENAME
 import com.izhxx.indoornavarandroid.utilites.workers.DatabaseWorker
 import com.izhxx.indoornavarandroid.utilites.workers.DatabaseWorker.Companion.FILENAME
 
-@Database(entities = [Location::class, SearchHistory::class], version = 1, exportSchema = false)
+@Database(
+    entities = [Location::class, SearchHistory::class],
+    version = 2,
+    exportSchema = true
+)
 abstract class AppDatabase : RoomDatabase() {
     abstract fun locationDao(): LocationDao
     abstract fun searchHistoryDao(): SearchHistoryDao
@@ -44,6 +49,7 @@ abstract class AppDatabase : RoomDatabase() {
                         }
                     }
                 )
+                .fallbackToDestructiveMigration()
                 .build()
         }
     }
