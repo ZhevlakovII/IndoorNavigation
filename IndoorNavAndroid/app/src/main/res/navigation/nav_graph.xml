@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navigation_map">
+
+    <fragment
+        android:id="@+id/navigation_map"
+        android:name="com.izhxx.indoornavarandroid.ui.MapFragment"
+        tools:layout="@layout/map_fragment">
+        <action
+            android:id="@+id/action_map_to_search"
+            app:destination="@id/navigation_search"/>
+
+        <action
+            android:id="@+id/action_map_to_point_selection"
+            app:destination="@id/navigation_points_selection"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.izhxx.indoornavarandroid.ui.SearchFragment"
+        tools:layout="@layout/search_fragment">
+
+        <action
+            android:id="@+id/action_search_to_map"
+            app:destination="@id/navigation_map"/>
+
+        <action
+            android:id="@+id/action_search_to_point_selection"
+            app:destination="@id/navigation_points_selection"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_points_selection"
+        android:name="com.izhxx.indoornavarandroid.ui.PointsSelectionFragment"
+        tools:layout="@layout/point_selection_fragment">
+
+        <action
+            android:id="@+id/action_point_selection_to_search"
+            app:destination="@id/navigation_search"/>
+
+        <action
+            android:id="@+id/action_point_selection_to_map"
+            app:destination="@id/navigation_map"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_ar_mode"
+        android:name="com.izhxx.indoornavarandroid.ui.ARModeFragment"
+        tools:layout="@layout/ar_mode_fragment"/>
+
+    <fragment
+        android:id="@+id/navigation_settings"
+        android:name="com.izhxx.indoornavarandroid.ui.SettingsFragment"
+        tools:layout="@layout/settings_fragment"/>
+
+</navigation>

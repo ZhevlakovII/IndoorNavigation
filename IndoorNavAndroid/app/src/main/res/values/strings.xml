@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">IndoorNavARAndroid</string>
+    <string name="app_name">Indoor Navigation</string>
+    <string name="map">Map</string>
+    <string name="settings">Settings</string>
+    <string name="armode">AR Mode</string>
+    <string name="search">Search here</string>
+    <string name="history">Recent</string>
+    <string name="enter_dest">Choose destination</string>
+    <string name="enter_start">Choose start location</string>
+    <string name="direction_activate">Directions</string>
+    <string name="start">Start</string>
+    <string name="time">In this version time unavailable</string>
+    <string name="game_view_content_description">Game view</string>
+    <string name="back_icon">Back Icon</string>
+    <string name="history_icon_view">History Icon View</string>
+    <string name="map_pin_icon_view">MapPin Icon View</string>
+    <string name="settings_text">In this version settings unavailable</string>
+    <string name="icon_view">iconsView</string>
 </resources>
