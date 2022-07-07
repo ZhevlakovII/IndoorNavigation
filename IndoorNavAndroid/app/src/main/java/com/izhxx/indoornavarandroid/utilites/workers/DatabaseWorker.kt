@@ -16,7 +16,7 @@ import java.lang.Exception
 class DatabaseWorker (
     context: Context,
     workerParams: WorkerParameters
-) : CoroutineWorker(context, workerParams) {
+): CoroutineWorker(context, workerParams) {
     override suspend fun doWork(): Result = withContext(Dispatchers.IO) {
         try {
             val fileName = inputData.getString(FILENAME)

@@ -20,10 +20,10 @@ import com.izhxx.indoornavarandroid.utilites.workers.DatabaseWorker.Companion.FI
 
 @Database(
     entities = [Location::class, SearchHistory::class],
-    version = 2,
+    version = 6,
     exportSchema = true
 )
-abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase: RoomDatabase() {
     abstract fun locationDao(): LocationDao
     abstract fun searchHistoryDao(): SearchHistoryDao
 

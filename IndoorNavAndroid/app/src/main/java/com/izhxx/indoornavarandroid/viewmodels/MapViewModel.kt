@@ -25,7 +25,7 @@ class MapViewModel @Inject internal constructor(
     private val application: Application,
     private val locationsRepo: LocationRepo
 ): ViewModel() {
-    val locations: LiveData<List<Location>> = locationsRepo.getAllLocations().asLiveData() //Locations list
+    val locations = locationsRepo.getAllLocations().asLiveData() //Locations list
 
     private val mapPoints: MutableList<Location> = mutableListOf() //List for the location selected by clicking
 
@@ -36,7 +36,7 @@ class MapViewModel @Inject internal constructor(
     //Create value for TileStreamProvider (opening and displaying map tiles)
     private val mapTiles = TileStreamProvider { row, col, zoomLvl ->
         try {
-            application.applicationContext.assets.open("map_assets/$zoomLvl/$row/$col.png")
+            application.applicationContext.assets.open("mapAssets/$zoomLvl/$row/$col.jpg")
         } catch (e: Exception) {
             null
         }
@@ -44,20 +44,19 @@ class MapViewModel @Inject internal constructor(
 
     //Create state for MapCompose
     val mapState: MapState by mutableStateOf(
-        MapState(4 , 4096, 4096).apply {
+        MapState(5 , 3546, 3580, tileSize = 256).apply {
             addLayer(mapTiles)
             enableRotation()
             onTap { x, y ->
                 if (isTapActive) {
                     mapClickHandler(x, y)
-                    changeTapState(false)
                 }
             }
         }
     )
 
-    fun changeTapState(isCardButtonClicked: Boolean) {
-        isTapOnMap.value = !isCardButtonClicked
+    fun changeTapState(isNextTap: Boolean) {
+        isTapOnMap.value = !isNextTap
     }
 
     fun changeTapActivate(result: Boolean) {
@@ -68,6 +67,7 @@ class MapViewModel @Inject internal constructor(
         if (mapPoints.count() == 1) {
             mapState.removeMarker("${mapPoints.lastIndex}")
             mapPoints.removeLast()
+            changeTapState(true)
         } else if (mapPoints.isEmpty()) {
             val location = validateCoordinates(x, y)
 
@@ -82,6 +82,8 @@ class MapViewModel @Inject internal constructor(
                         tint = Color(R.color.interface_primary)
                     )
                 }
+
+                changeTapState(false)
             }
         }
     }
@@ -96,5 +98,13 @@ class MapViewModel @Inject internal constructor(
         }
 
         return null
+    }
+
+    fun getLocationName(): String {
+        return mapPoints[mapPoints.lastIndex].locationName ?: "Location not found"
+    }
+
+    fun getLocationId(): Int {
+        return mapPoints[mapPoints.lastIndex].locationId ?: -1
     }
 }

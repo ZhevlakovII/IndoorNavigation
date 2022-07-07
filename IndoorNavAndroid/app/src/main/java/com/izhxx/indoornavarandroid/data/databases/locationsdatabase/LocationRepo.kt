@@ -11,9 +11,7 @@ class LocationRepo @Inject constructor(
 
     fun getLocationById(id: Int) = locationDao.getLocationById(id)
 
-    fun getLocationName(name: String) = locationDao.getLocationName(name)
-
-    fun getRuLocationName(name: String) = locationDao.getRuLocationName(name)
+    fun getLocationByName(name: String) = locationDao.getLocationByName(name)
 
     fun getLocationCenterX(id: Int) = locationDao.getLocationCenterX(id)
     fun getLocationCenterY(id: Int) = locationDao.getLocationCenterY(id)
