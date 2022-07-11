@@ -12,4 +12,6 @@ class SearchHistoryRepo @Inject constructor(
     fun getDatabaseLastId() = searchHistoryDao.getDatabaseLastId()
 
     fun insertSearchedLocation(searchLocation: SearchHistory) = searchHistoryDao.insertSearchedLocation(searchLocation)
+
+    fun deleteSearchedLocation(searchLocation: SearchHistory) = searchHistoryDao.deleteSearchedLocation(searchLocation)
 }

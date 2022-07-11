@@ -6,8 +6,8 @@
 
     <data>
         <variable
-            name="searchedItem"
-            type="String"/>
+            name="pickedLocation"
+            type="com.izhxx.indoornavarandroid.data.databases.locationsdatabase.Location"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -62,7 +62,7 @@
                 android:id="@+id/point_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@{searchedItem}"
+                android:text="@{pickedLocation.locationName}"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginBottom="70dp"/>

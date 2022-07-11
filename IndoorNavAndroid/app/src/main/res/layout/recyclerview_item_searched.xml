@@ -9,7 +9,7 @@
             type="android.view.View.OnClickListener" />
         <variable
             name="searchedItem"
-            type="String"/>
+            type="com.izhxx.indoornavarandroid.data.databases.locationsdatabase.Location"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="@{searchedItem}"
+                android:text="@{searchedItem.locationName}"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/icon_rv_searched"

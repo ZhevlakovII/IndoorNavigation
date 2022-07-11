@@ -100,11 +100,11 @@ class MapViewModel @Inject internal constructor(
         return null
     }
 
-    fun getLocationName(): String {
-        return mapPoints[mapPoints.lastIndex].locationName ?: "Location not found"
+    fun getLocation(): Location {
+        return mapPoints[mapPoints.lastIndex]
     }
 
     fun getLocationId(): Int {
-        return mapPoints[mapPoints.lastIndex].locationId ?: -1
+        return mapPoints[mapPoints.lastIndex].locationId
     }
 }
