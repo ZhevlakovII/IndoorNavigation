@@ -9,7 +9,7 @@ data class Location(
     val locationId: Int,
 
     @ColumnInfo (name = "name")
-    val locationName: String?,
+    val locationName: String,
 
     val startX: Double,
     val startY: Double,

@@ -40,12 +40,12 @@ class MapFragment: Fragment() {
     private fun pickPointButtonClickListener() {
         val clickDestination = MapFragmentDirections.actionMapToPointSelection()
         view?.findNavController()?.navigate(clickDestination)
-
-        mapViewModel.changeTapState(true)
+        
+        sharedViewModel.changePickedLocation(mapViewModel.getLocation())
     }
 
     private fun searchButtonClickListener() {
-        val clickDestination = MapFragmentDirections.actionMapToSearch()
+        val clickDestination = MapFragmentDirections.actionMapToSearch(true)
         view?.findNavController()?.navigate(clickDestination)
     }
 
@@ -60,7 +60,7 @@ class MapFragment: Fragment() {
         mapViewModel.isTapOnMap.observe(viewLifecycleOwner) { tapState ->
             if (tapState) {
                 binding.navigationCard.visibility = View.VISIBLE
-                binding.searchedItem = mapViewModel.getLocationName()
+                binding.pickedLocation = mapViewModel.getLocation()
                 sharedViewModel.changeCardState(tapState)
             }
             else {

@@ -12,7 +12,12 @@
         tools:layout="@layout/map_fragment">
         <action
             android:id="@+id/action_map_to_search"
-            app:destination="@id/navigation_search"/>
+            app:destination="@id/navigation_search">
+
+            <argument
+                android:name="isOpenFromMap"
+                app:argType="boolean"/>
+        </action>
 
         <action
             android:id="@+id/action_map_to_point_selection"
@@ -23,6 +28,10 @@
         android:id="@+id/navigation_search"
         android:name="com.izhxx.indoornavarandroid.ui.SearchFragment"
         tools:layout="@layout/search_fragment">
+
+        <argument
+            android:name="isOpenFromMap"
+            app:argType="boolean"/>
 
         <action
             android:id="@+id/action_search_to_map"
@@ -40,7 +49,12 @@
 
         <action
             android:id="@+id/action_point_selection_to_search"
-            app:destination="@id/navigation_search"/>
+            app:destination="@id/navigation_search">
+
+            <argument
+                android:name="isOpenFromMap"
+                app:argType="boolean"/>
+        </action>
 
         <action
             android:id="@+id/action_point_selection_to_map"

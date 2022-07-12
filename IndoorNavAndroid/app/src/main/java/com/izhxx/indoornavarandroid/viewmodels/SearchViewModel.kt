@@ -16,7 +16,7 @@ class SearchViewModel @Inject internal constructor(
 ): ViewModel() {
     val historyList = searchHistoryRepo.getAllHistory().asLiveData()
 
-    lateinit var searchedLocation: LiveData<List<Location>>
+    var searchedLocation: LiveData<List<Location>> = locationsRepo.getAllLocations().asLiveData()
 
     fun searchLocation(locationName: String) {
         searchedLocation = locationsRepo.getLocationByName(locationName).asLiveData()

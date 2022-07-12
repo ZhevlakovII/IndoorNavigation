@@ -9,7 +9,7 @@
             type="android.view.View.OnClickListener" />
         <variable
             name="history"
-            type="String"/>
+            type="com.izhxx.indoornavarandroid.data.databases.searchhistorydatabase.SearchHistory"/>
     </data>
 
     <androidx.cardview.widget.CardView
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="12dp"
-                android:text="@{history}"
+                android:text="@{history.searchHistoryName}"
                 android:textColor="@color/text_secondary"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@id/icon_rv_history"
