@@ -31,8 +31,7 @@ class SharedViewModel @Inject internal constructor(
 
     fun changePickedLocationWithId(searchedLocationId: Int) {
         viewModelScope.launch (Dispatchers.IO) {
-            val result = locationsRepo.getLocationById(searchedLocationId)
-            pickedLocation.value = result
+            pickedLocation.postValue(locationsRepo.getLocationById(searchedLocationId))
         }
     }
 
@@ -41,7 +40,7 @@ class SharedViewModel @Inject internal constructor(
             searchHistoryRepo.deleteSearchedLocation(item)
             searchHistoryRepo.insertSearchedLocation(
                 SearchHistory(
-                    searchHistoryRepo.getDatabaseLastId(),
+                    searchHistoryRepo.getDatabaseLastId() + 1,
                     item.searchHistoryName,
                     item.searchedLocationId
                 )
@@ -53,8 +52,8 @@ class SharedViewModel @Inject internal constructor(
         viewModelScope.launch (Dispatchers.IO) {
             searchHistoryRepo.insertSearchedLocation(
                 SearchHistory(
-                    searchHistoryRepo.getDatabaseLastId(),
-                    item.locationName!!,
+                    searchHistoryRepo.getDatabaseLastId() + 1,
+                    item.locationName,
                     item.locationId
                 )
             )

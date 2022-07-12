@@ -20,7 +20,7 @@ import com.izhxx.indoornavarandroid.utilites.workers.DatabaseWorker.Companion.FI
 
 @Database(
     entities = [Location::class, SearchHistory::class],
-    version = 6,
+    version = 7,
     exportSchema = true
 )
 abstract class AppDatabase: RoomDatabase() {

@@ -39,18 +39,27 @@ class SearchFragment: Fragment()  {
         binding.recyclerviewSearchedItems.adapter = searchedLocationsViewAdapter
 
         binding.backButton.setOnClickListener { backButtonClickListener() }
-        binding.textInputLayout.editText?.addTextChangedListener { text -> editTextChangeListener(text, binding) }
+        binding.textInputLayout.editText?.addTextChangedListener {
+            editTextChangeListener(it, binding)
+            subscribeSearchedList(searchedLocationsViewAdapter)
+        }
 
-        subscribeUi(binding, historyViewAdapter, searchedLocationsViewAdapter)
+        subscribeHistoryList(historyViewAdapter)
 
         return binding.root
     }
 
     private fun editTextChangeListener(text: Editable?, binding: SearchFragmentBinding) {
         text.let {
-            searchViewModel.searchLocation(it.toString())
-            binding.recyclerviewHistory.visibility = View.GONE
-            binding.recyclerviewSearchedItems.visibility = View.VISIBLE
+            if (it.isNullOrEmpty()) {
+                binding.recyclerviewHistory.visibility = View.VISIBLE
+                binding.recyclerviewSearchedItems.visibility = View.GONE
+            } else {
+                searchViewModel.searchLocation(it.toString())
+
+                binding.recyclerviewHistory.visibility = View.GONE
+                binding.recyclerviewSearchedItems.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -58,17 +67,19 @@ class SearchFragment: Fragment()  {
         view?.findNavController()?.navigateUp()
     }
 
-    private fun subscribeUi(
-        binding: SearchFragmentBinding,
-        historyAdapter: HistoryViewAdapter,
-        searchedLocationsAdapter: SearchedLocationsViewAdapter
+    private fun subscribeHistoryList(
+        historyAdapter: HistoryViewAdapter
     ) {
         searchViewModel.historyList.observe(viewLifecycleOwner) { historyList ->
-            historyAdapter.submitList(historyList)
+            if (historyList != null) historyAdapter.submitList(historyList)
         }
+    }
 
+    private fun subscribeSearchedList(
+        searchedLocationsAdapter: SearchedLocationsViewAdapter
+    ) {
         searchViewModel.searchedLocation.observe(viewLifecycleOwner) { locations ->
-            searchedLocationsAdapter.submitList(locations)
+            if (locations != null) searchedLocationsAdapter.submitList(locations)
         }
     }
 }

@@ -14,7 +14,7 @@ interface LocationDao {
     @Query("SELECT * FROM locations WHERE id LIKE :id")
     fun getLocationById(id: Int): Location
 
-    @Query("SELECT * FROM locations WHERE name LIKE :name || '%'")
+    @Query("SELECT * FROM locations WHERE name LIKE '%' || :name || '%'")
     fun getLocationByName(name: String): Flow<List<Location>>
 
     @Query("SELECT centerX FROM locations WHERE id LIKE :id")

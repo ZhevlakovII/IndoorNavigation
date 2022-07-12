@@ -42,7 +42,7 @@ class SearchedLocationsViewAdapter(
         init {
             binding.setClickListener {
                 binding.searchedItem.let { item ->
-                    sharedViewModel.changePickedLocationWithId(item!!.locationId)
+                    sharedViewModel.changePickedLocationWithId(item.locationId)
                     sharedViewModel.insertNewItem(item)
                     navigateToPointsSelection(it, isOpenFromMap)
                 }

@@ -40,8 +40,7 @@ class MapFragment: Fragment() {
     private fun pickPointButtonClickListener() {
         val clickDestination = MapFragmentDirections.actionMapToPointSelection()
         view?.findNavController()?.navigate(clickDestination)
-
-        mapViewModel.changeTapState(true)
+        
         sharedViewModel.changePickedLocation(mapViewModel.getLocation())
     }
 
