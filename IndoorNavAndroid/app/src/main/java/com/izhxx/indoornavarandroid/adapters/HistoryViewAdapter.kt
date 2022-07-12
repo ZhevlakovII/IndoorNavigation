@@ -44,8 +44,8 @@ class HistoryViewAdapter (
         init {
             binding.setClickListener {
                 binding.history.let { item ->
-                    sharedViewModel.changePickedLocationWithId(item.searchedLocationId)
-                    sharedViewModel.insertHistoryItem(item)
+                    sharedViewModel.changePickedLocationWithId(item!!.searchedLocationId)
+                    item.let { sharedViewModel.insertHistoryItem(it) }
                     navigateToPointsSelection(it, isOpenFromMap)
                 }
             }
