@@ -17,9 +17,9 @@
 - [Kotlin](https://kotlinlang.org/) + [Java](https://www.java.com/ru/)
 - [MVVM](https://www.youtube.com/watch?v=rb0lobFwZbg&list=PL_RkZ4J60MDkkgTUjMVXHTpsxZW7QHQzt&index=2)
 - [Room](https://developer.android.com/training/data-storage/room), [LiveData](https://developer.android.com/topic/libraries/architecture/livedata)
-- [Coroutines](https://developer.android.com/kotlin/coroutines) -> RxJava(https://github.com/ReactiveX/RxJava)
+- [Coroutines](https://developer.android.com/kotlin/coroutines) -> [RxJava](https://github.com/ReactiveX/RxJava)
 - [Jetpack navigation](https://developer.android.com/guide/navigation) ->? [Cicerone](https://github.com/terrakok/Cicerone)
-- [Jetpack Compose](https://developer.android.com/jetpack/compose) (~~Вау, он собрал весь смузи-стек!~~) + Material3(https://m3.material.io/)
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) + [Material](m2.material.io)
 - [Dagger2](https://dagger.dev/)
 - [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 ### Функции
