@@ -23,8 +23,6 @@ class SearchFragment: Fragment()  {
     private val searchViewModel: SearchViewModel by viewModels()
     private val sharedViewModel: SharedViewModel by activityViewModels()
 
-    private val searchFragmentArguments: SearchFragmentArgs by navArgs()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -32,20 +30,20 @@ class SearchFragment: Fragment()  {
     ): View {
         val binding = SearchFragmentBinding.inflate(inflater, container, false)
 
-        val historyViewAdapter = HistoryViewAdapter(sharedViewModel, searchFragmentArguments.isOpenFromMap)
-        val searchedLocationsViewAdapter = SearchedLocationsViewAdapter(sharedViewModel, searchFragmentArguments.isOpenFromMap)
-
-        binding.recyclerviewHistory.adapter = historyViewAdapter
-        binding.recyclerviewSearchedItems.adapter = searchedLocationsViewAdapter
-
-        binding.backButton.setOnClickListener { backButtonClickListener() }
-        binding.textInputLayout.editText?.addTextChangedListener {
-            editTextChangeListener(it, binding)
-            subscribeSearchedList(searchedLocationsViewAdapter)
-        }
-
-        subscribeHistoryList(historyViewAdapter)
-
+//        val historyViewAdapter = HistoryViewAdapter(sharedViewModel, searchFragmentArguments.isOpenFromMap)
+//        val searchedLocationsViewAdapter = SearchedLocationsViewAdapter(sharedViewModel, searchFragmentArguments.isOpenFromMap)
+//
+//        binding.recyclerviewHistory.adapter = historyViewAdapter
+//        binding.recyclerviewSearchedItems.adapter = searchedLocationsViewAdapter
+//
+//        binding.backButton.setOnClickListener { backButtonClickListener() }
+//        binding.textInputLayout.editText?.addTextChangedListener {
+//            editTextChangeListener(it, binding)
+//            subscribeSearchedList(searchedLocationsViewAdapter)
+//        }
+//
+//        subscribeHistoryList(historyViewAdapter)
+//
         return binding.root
     }
 

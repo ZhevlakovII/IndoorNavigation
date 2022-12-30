@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "IndoorNavARAndroid"
-include ':app'
-include ':indoornavigation-core'
-include ':indoornavigation-ui'
+include ":app"
+include ":indoornavigation-core"
+include ":indoornavigation-ui"
