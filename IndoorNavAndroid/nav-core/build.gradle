@@ -1,0 +1,33 @@
+plugins {
+    id "com.google.devtools.ksp" version "$kspVersion"
+}
+
+apply from: "$rootProject.rootDir/scripts/settings.gradle"
+apply from: "$rootProject.rootDir/scripts/common.gradle"
+
+android {
+    namespace "com.izhxx.navcore"
+
+    buildTypes {
+        debug {}
+        release {}
+    }
+}
+
+dependencies {
+    implementation "androidx.core:core-ktx:$ktxVersion"
+
+    //database
+    implementation "androidx.room:room-runtime:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    implementation "androidx.room:room-rxjava2:$roomVersion"
+    ksp "androidx.room:room-compiler:$roomVersion"
+
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxAndroidVersion"
+
+//    testImplementation "junit:junit:4.13.2"
+//    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+//    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+}

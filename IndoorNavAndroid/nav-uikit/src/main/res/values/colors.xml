@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Light Palette-->
+
+    <!--Interface-->
+    <color name="nav_ui_kit_interface_primary">#4B50BF</color>
+    <color name="nav_ui_kit_interface_secondary">#333554</color>
+    <color name="nav_ui_kit_interface_tertiary">#B4B6EA</color>
+
+    <!--Text-->
+    <color name="nav_ui_kit_text_primary">#222222</color>
+    <color name="nav_ui_kit_text_secondary">#505050</color>
+
+    <!--Borders-->
+    <color name="nav_ui_kit_border">#C5C5C5</color>
+    <color name="nav_ui_kit_border_extra">#BABABA</color>
+
+    <!--Icons-->
+    <color name="nav_ui_kit_grayscale_icons">#E3E3E3</color>
+
+    <!--Other-->
+    <color name="nav_ui_kit_black">#FF000000</color>
+    <color name="nav_ui_kit_white">#FFFFFFFF</color>
+    <color name="nav_ui_kit_background">#F0FFFFFF</color>
+
+</resources>

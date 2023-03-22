@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Height-->
+    <dimen name="nav_ui_kit_default_bottom_menu_height">56dp</dimen>
+    <dimen name="nav_ui_kit_default_button_height">56dp</dimen>
+    <dimen name="nav_ui_kit_default_edit_text_height">56dp</dimen>
+    
+    <!--Padding-->
+
+    <!--Horizontal-->
+    <dimen name="nav_ui_kit_default_small_horizontal_padding">12dp</dimen>
+    <dimen name="nav_ui_kit_default_medium_horizontal_padding">16dp</dimen>
+    <dimen name="nav_ui_kit_default_large_horizontal_padding">20dp</dimen>
+
+    <!--Vertical-->
+    <dimen name="nav_ui_kit_default_small_vertical_padding">4dp</dimen>
+    <dimen name="nav_ui_kit_default_medium_vertical_padding">8dp</dimen>
+    <dimen name="nav_ui_kit_default_large_vertical_padding">16dp</dimen>
+
+    <!--Full-->
+    <dimen name="nav_ui_kit_default_large_padding">20dp</dimen>
+
+    <!--Other-->
+    <dimen name="nav_ui_kit_map_button_search_horizontal_padding">48dp</dimen>
+
+    <dimen name="nav_ui_kit_custom_edit_text_bottom_padding">6dp</dimen>
+    <dimen name="nav_ui_kit_custom_edit_text_padding_specific_bottom_padding">11dp</dimen>
+    <dimen name="nav_ui_kit_custom_edit_text_horizontal_padding">48dp</dimen>
+
+    <!--Corner Radius-->
+    <dimen name="nav_ui_kit_bottom_menu_corner_radius">8dp</dimen>
+    <dimen name="nav_ui_kit_button_search_corner_radius">24dp</dimen>
+    <dimen name="nav_ui_kit_card_view_corner_radius">12dp</dimen>
+    <dimen name="nav_ui_kit_edit_text_input_corner_radius">24dp</dimen>
+
+    <!--Margins-->
+
+    <!--Other-->
+    <dimen name="nav_ui_kit_default_large_top_margin">16dp</dimen>
+    <dimen name="nav_ui_kit_default_medium_top_margin">8dp</dimen>
+    <dimen name="nav_ui_kit_default_small_top_margin">4dp</dimen>
+
+</resources>

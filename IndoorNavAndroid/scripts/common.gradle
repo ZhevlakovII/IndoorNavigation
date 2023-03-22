@@ -1,0 +1,135 @@
+import java.text.SimpleDateFormat
+import java.util.regex.Pattern
+
+ext.applyRepoManager = { RepositoryHandler handler ->
+    def propName = "repoManagerUrl"
+    def propFile = project.rootProject.file("local.properties")
+
+    if (!propFile.canRead()) return
+
+    def input = propFile.newDataInputStream()
+    try {
+        def properties = new Properties()
+        properties.load(input)
+        def repoUrl = properties.getProperty(propName)
+        if (repoUrl != null) {
+            handler.maven { url repoUrl }
+        }
+    } finally {
+        input.close()
+    }
+}
+
+ext.isRelease = {
+    return project.gradle.startParameter.taskNames.any { it.toLowerCase().contains('release') }
+}
+
+ext.gitCommitCount = {
+    return "git rev-list --count HEAD".execute().text.trim().toInteger()
+}
+
+ext.getTagVersionName = {
+    def gitTag = "git describe --abbrev=0".execute().text.trim()
+    def pattern = Pattern.compile($/^\D*(\d+)\.(\d+)\.(\d+)(\D?.*)/$)
+    def matcher = pattern.matcher(gitTag)
+
+//    if (!matcher.find()) {
+//        throw new IllegalStateException("Wrong git tag format: $gitTag\n" +
+//                "Tag must contain at least 3 digits separated by dot, ex. 1.11.11 RC\n" +
+//                "Also, make sure to add 'annotated' tag")
+//    }
+//    Replace when create tag
+//    def tagVersionName = "${matcher.group(1)}.${matcher.group(2)}.${matcher.group(3)}${matcher.group(4)}"
+    def tagVersionName = "0.0.1"
+
+    print("\nTag version name: $tagVersionName\n")
+
+    return tagVersionName
+}
+
+ext.getVersionCodeByMasterCommits = {
+    def masterCommitsCount = "git rev-list --count master".execute().text.trim()
+    print("\nVersion code: $masterCommitsCount\n")
+    return masterCommitsCount
+}
+
+ext.getBranchName = { Boolean addHash = true ->
+    def gitHash = "git rev-parse --short HEAD".execute().text.trim()
+
+    def ciBranchName = System.getenv("CI_GIT_BRANCH")
+
+    String branchName
+
+    if (ciBranchName != null && !ciBranchName.isBlank()) {
+        ciBranchName = ciBranchName
+                .trim()
+                .replace("origin/", "")
+                .replace("/", ".")
+
+        branchName = ciBranchName
+    } else {
+        def gitBranch = "git rev-parse --abbrev-ref HEAD"
+                .execute()
+                .text
+                .trim()
+                .replace("/", ".")
+
+        branchName = gitBranch
+    }
+
+    if (addHash) {
+        return "$branchName($gitHash)"
+    } else {
+        return branchName
+    }
+}
+
+ext.getTaskCodeSuffix = {
+    String[] array = getBranchName(false).split('\\.')
+    if (array.length > 0) {
+        array = array.last().split('-')
+
+        if (array.length >= 2) {
+            return "-${array[0]}-${array[1]}"
+        }
+    }
+
+    return ""
+}
+
+ext.buildDebugVersionSuffix = { String branchName, Integer buildNumber = null ->
+    def versionName = ""
+
+    if (buildNumber != null) {
+        versionName += "-$buildNumber"
+    }
+
+    versionName += "-[$branchName]"
+
+    println("\nDebug versionName suffix: $versionName\n")
+    return versionName
+}
+
+ext.includeProjects = { List<String> directories ->
+    def projectPath = (rootProject.projectDir.absolutePath + File.separator).replace("\\", "\\\\")
+    def UNDEFINED = "undefined"
+
+    def projectMap = rootProject.subprojects.groupBy { project ->
+        def path = project.projectDir.absolutePath.replaceFirst(projectPath, "")
+        for (String dir : directories) {
+            if (path.startsWith(dir)) {
+                return dir
+            }
+        }
+        return UNDEFINED
+    }
+    projectMap.remove(UNDEFINED)
+    projectMap.keySet().toSorted().each { dir ->
+        println("Included projects in \"$dir\":")
+        projectMap[dir].toSorted().each { project ->
+            if (this.project == project) return
+            println("\t- :${project.getName()}")
+            this.project.dependencies.implementation project
+        }
+    }
+}
