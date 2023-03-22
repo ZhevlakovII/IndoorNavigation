@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="IndoorNavigation" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
+        <!--Color-->
+        <item name="colorPrimary">@color/nav_ui_kit_interface_primary</item>
+        <item name="colorSecondary">@color/nav_ui_kit_interface_secondary</item>
+        <item name="android:colorBackground">@color/nav_ui_kit_background</item>
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!--Text-->
+        <item name="textAppearanceHeadline1">@style/IndoorNavigation.Text.H5</item>
+        <item name="textAppearanceBody1">@style/IndoorNavigation.Text.B1</item>
+
+        <!--Components-->
+        <item name="bottomNavigationStyle">@style/IndoorNavigation.BottomView</item>
+    </style>
+
+</resources>

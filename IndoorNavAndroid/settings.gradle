@@ -1,18 +1,4 @@
-pluginManagement {
-    repositories {
-        gradlePluginPortal()
-        google()
-        mavenCentral()
-    }
-}
-dependencyResolutionManagement {
-    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
-rootProject.name = "IndoorNavARAndroid"
-include ':app'
-include ':indoornavigation-core'
-include ':indoornavigation-ui'
+include ":app"
+include ":nav-core"
+include ":nav-ui"
+include ":nav-uikit"

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:alpha="1.00"
+        android:color="@color/nav_ui_kit_interface_primary"
+        android:state_checked="true" />
+    <item
+        android:alpha="1.00"
+        android:color="@color/nav_ui_kit_interface_secondary" />
+
+</selector>

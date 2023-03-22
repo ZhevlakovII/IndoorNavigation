@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/mapFragment"
+        android:icon="@drawable/nav_ui_kit_ic_map_24dp"
+        android:title="@string/nav_ui_fragment_map_name" />
+
+    <item
+        android:id="@+id/arFragment"
+        android:icon="@drawable/nav_ui_kit_ic_ar_24dp"
+        android:title="@string/nav_ui_fragment_ar_name" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/nav_ui_kit_ic_settings_24dp"
+        android:title="@string/nav_ui_fragment_settings_name" />
+
+</menu>

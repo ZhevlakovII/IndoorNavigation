@@ -1,23 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:allowBackup="true"
-        android:dataExtractionRules="@xml/data_extraction_rules"
-        android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/ic_ar_24dp"
+        android:icon="@drawable/nav_ui_kit_ic_ar_24dp"
         android:label="@string/app_name"
-        android:name=".IndoorNavApplication"
-        android:roundIcon="@drawable/ic_ar_24dp"
-        android:supportsRtl="true"
-        android:theme="@style/Theme.IndoorNavARAndroid"
-        tools:targetApi="31">
-
+        android:theme="@style/Theme.IndoorNavigation.Splash">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="com.google.android.material.card.MaterialCardView">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/nav_ui_kit_default_medium_horizontal_padding"
+        android:paddingVertical="@dimen/nav_ui_kit_default_medium_vertical_padding">
+
+        <TextView
+            android:id="@+id/navUiKitCardPointInfoTitle"
+            style="@style/IndoorNavigation.TextView.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nav_ui_kit_info_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/navUiKitCardPointInfoButton"
+            style="@style/IndoorNavigation.FilledButton"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/nav_ui_kit_default_button_height"
+            android:layout_marginTop="@dimen/nav_ui_kit_default_medium_top_margin"
+            android:text="@string/nav_ui_kit_info_text"
+            app:icon="@drawable/nav_ui_kit_ic_arrow_24dp"
+            app:iconTint="@color/nav_ui_kit_white"
+            tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+    </LinearLayout>
+
+</merge>

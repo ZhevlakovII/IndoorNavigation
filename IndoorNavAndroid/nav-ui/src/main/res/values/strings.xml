@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Fragment name-->
+    <string name="nav_ui_fragment_map_name">Map</string>
+    <string name="nav_ui_fragment_ar_name">Reality</string>
+    <string name="nav_ui_fragment_settings_name">Settings</string>
+
+    <!--Hints-->
+    <string name="nav_ui_button_search_map_hint">Search</string>
+    <string name="nav_ui_button_map_direction_hint">Direction</string>
+    <string name="nav_ui_edittext_search_hint">Search</string>
+
+    <!--ImageButton description-->
+    <string name="nav_ui_search_button_search_icon_search_description">Search icon</string>
+    <string name="nav_ui_search_button_back_description">Back button</string>
+
+</resources>

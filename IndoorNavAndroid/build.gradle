@@ -1,13 +1,98 @@
+ext.versions = [
+        minSdk     : 21,
+        targetSdk  : 33,
+        compileSdk : 33
+]
+
 buildscript {
-    dependencies { }
+    apply from: "$project.rootDir/scripts/common.gradle"
+
+    ext {
+        //Studio
+        kotlinVersion = '1.8.10'
+        kspVersion = '1.8.10-1.0.9'
+
+        //KTX
+        ktxVersion = '1.9.0'
+
+        //XML
+        appcompatVersion = '1.6.1'
+        materialVersion = '1.8.0'
+
+        //Compose
+        mapComposeVersion = '2.4.1'
+        composeBomVersion = '2023.01.00'
+        composeCompilerVersion = '1.4.3'
+
+        //Navigation
+        navVersion = '2.5.3'
+
+        //database
+        roomVersion = '2.5.0'
+
+        //rxjava
+        rxJavaVersion = '2.2.21'
+        rxAndroidVersion = '2.1.1'
+
+        //dagger
+        daggerVersion = '2.45'
+    }
+
+    applyRepoManager(repositories)
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.1.0-alpha09'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
+    }
+
 }
 
-plugins {
-    id 'com.android.application' version '7.3.1' apply false
-    id 'com.android.library' version '7.3.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+allprojects {
+    apply from: "$project.rootDir/scripts/common.gradle"
+    applyRepoManager(repositories)
+    repositories {
+        google()
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+
+    }
 }
 
-task clean(type: Delete) {
+subprojects {
+    afterEvaluate {
+        if (project.hasProperty("android")) {
+            android {
+                compileOptions {
+                    sourceCompatibility JavaVersion.VERSION_17
+                    targetCompatibility JavaVersion.VERSION_17
+                }
+
+                if (project.hasProperty("kotlin")) {
+                    kotlinOptions {
+                        jvmTarget = JavaVersion.VERSION_17.toString()
+                    }
+                }
+            }
+        }
+    }
+}
+
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
+}
+
+tasks.register('cleanFull') {
+    doLast {
+        def javaHome = System.getProperty("java.home").replace(" ", "\\ ")
+        String command = "export JAVA_HOME=$javaHome;" +
+                "./gradlew clean cleanBuildCache;" +
+                "rm -rf ~/.gradle/caches/build-cache-*"
+        String[] cmd = ["bash", "-c", command]
+        def execute = Runtime.getRuntime().exec(cmd, null, project.rootDir)
+        execute.waitForProcessOutput(System.out, System.err)
+    }
 }
