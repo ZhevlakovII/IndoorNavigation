@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="NavUiKitCardPointInfo">
+        <attr name="cardPointInfoTitleText" format="string" />
+        <attr name="cardPointInfoButtonText" format="string" />
+        <attr name="cardPointInfoButtonIconColor" format="color" />
+        <attr name="cardPointInfoButtonIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NavUiKitButtonSearch">
+        <attr name="searchButtonHint" format="string" />
+        <attr name="searchButtonText" format="string" />
+        <attr name="searchButtonIcon" format="reference" />
+    </declare-styleable>
+
+    <declare-styleable name="NavUiKitCustomEditText">
+        <attr name="customEditTextHint" format="string" />
+        <attr name="customEditTextText" format="string" />
+    </declare-styleable>
+
+</resources>

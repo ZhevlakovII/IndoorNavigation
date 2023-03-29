@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="IndoorNavigation.Text.H5" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/nav_ui_kit_roboto_medium</item>
+    </style>
+
+    <style name="IndoorNavigation.Text.B1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/nav_ui_kit_roboto</item>
+    </style>
+
+</resources>
