@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="nav_uikit_caption">12sp</dimen>
+    <dimen name="nav_uikit_body">16sp</dimen>
+    <dimen name="nav_uikit_headline">24sp</dimen>
+
+</resources>

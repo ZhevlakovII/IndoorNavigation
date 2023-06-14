@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/navClientMapFragment">
+
+    <fragment
+        android:id="@+id/navClientMapFragment"
+        android:name="com.izhxx.navclient.presentation.map.MapFragment"
+        android:label="@string/nav_client_fragment_map_name"
+        tools:layout="@layout/nav_client_fragment_map">
+
+        <action
+            android:id="@+id/navClientMapFragmentToSearchFragment"
+            app:destination="@id/navClientSearchFragment" />
+
+        <action
+            android:id="@+id/navClientMapFragmentToNavigationFragment"
+            app:destination="@id/navClientNavigationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navClientSearchFragment"
+        android:name="com.izhxx.navclient.presentation.search.SearchFragment"
+        android:label="@string/nav_client_fragment_search_name"
+        tools:layout="@layout/nav_client_fragment_search">
+
+        <action
+            android:id="@+id/navClientSearchFragmentToMapFragment"
+            app:destination="@id/navClientMapFragment" />
+        <action
+            android:id="@+id/navClientSearchFragmentToNavigationFragment"
+            app:destination="@id/navClientNavigationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navClientNavigationFragment"
+        android:name="com.izhxx.navclient.presentation.navigation.NavigationFragment"
+        android:label="@string/nav_client_fragment_navigation_name"
+        tools:layout="@layout/nav_client_fragment_navigation">
+
+        <action
+            android:id="@+id/navClientNavigationFragmentToMapFragment"
+            app:destination="@id/navClientMapFragment" />
+        <action
+            android:id="@+id/navClientNavigationFragmentToSearchFragment"
+            app:destination="@id/navClientSearchFragment" />
+        <action
+            android:id="@+id/navClientNavigationFragmentToRouteFragment"
+            app:destination="@id/navClientRouteFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navClientRouteFragment"
+        android:name="com.izhxx.navclient.presentation.route.RouteFragment"
+        android:label="@string/nav_client_fragment_route_name"
+        tools:layout="@layout/nav_client_fragment_route">
+
+    </fragment>
+
+</navigation>

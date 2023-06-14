@@ -19,4 +19,9 @@
         <attr name="customEditTextText" format="string" />
     </declare-styleable>
 
+    <declare-styleable name="NavUiKitPointsInput">
+        <attr name="currentPositionHint" format="string" />
+        <attr name="destinationHint" format="string" />
+    </declare-styleable>
+
 </resources>

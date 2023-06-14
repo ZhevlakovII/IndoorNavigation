@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Fragment name-->
+    <string name="nav_client_fragment_map_name">Map</string>
+    <string name="nav_client_fragment_ar_name">Reality</string>
+    <string name="nav_client_fragment_settings_name">Settings</string>
+    <string name="nav_client_fragment_search_name">Search</string>
+    <string name="nav_client_fragment_navigation_name">Navigation</string>
+    <string name="nav_client_fragment_route_name">Route</string>
+
+    <!--ImageButton description-->
+    <string name="nav_client_search_button_search_icon_search_description">Search icon</string>
+    <string name="nav_client_search_button_back_description">Back button</string>
+
+    <!--Other-->
+    <string name="nav_client_ui_error_unknown">Unknown error</string>
+    
+    <!--Map strings-->
+    <string name="nav_client_map_show_location_error">Location can\'t show because it can\'t be find</string>
+    <string name="nav_client_map_button_search_hint">Search</string>
+    <string name="nav_client_map_button_direction_hint">Direction</string>
+
+    <!--Search strings-->
+    <string name="nav_client_search_empty_locations">Locations don\'t found</string>
+    <string name="nav_client_search_edittext_hint">Search</string>
+    
+    <!--Navigation string-->
+    <string name="nav_client_navigation_time_text">Not available :(</string>
+    <string name="nav_client_navigation_start">Start</string>
+    <string name="nav_client_navigation_pointsinput_current_position_hint">Current position</string>
+    <string name="nav_client_navigation_pointsinput_destination_hint">Destination</string>
+    <string name="nav_client_navigation_error_points_empty">Current position and destination is empty!</string>
+    <string name="nav_client_navigation_error_current_position_empty">Current position is empty!</string>
+    <string name="nav_client_navigation_error_destination_empty">Destination is empty!</string>
+
+</resources>

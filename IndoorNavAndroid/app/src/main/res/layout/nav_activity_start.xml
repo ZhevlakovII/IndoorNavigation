@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/navAppButtonOpenClient"
+        style="@style/IndoorNavigation.FilledButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/nav_uikit_default_large_horizontal_margin"
+        android:layout_marginTop="@dimen/nav_uikit_default_large_vertical_margin"
+        android:layout_marginBottom="@dimen/nav_uikit_default_small_vertical_margin"
+        android:text="@string/nav_app_open_client"
+        app:layout_constraintBottom_toTopOf="@id/navAppButtonOpenCreator"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/navAppButtonOpenCreator"
+        style="@style/IndoorNavigation.FilledButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/nav_uikit_default_large_horizontal_margin"
+        android:layout_marginTop="@dimen/nav_uikit_default_small_vertical_margin"
+        android:layout_marginBottom="@dimen/nav_uikit_default_large_vertical_margin"
+        android:text="@string/nav_app_open_creator"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navAppButtonOpenClient" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

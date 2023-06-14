@@ -4,7 +4,7 @@ import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.izhxx.navuikit.databinding.NavUiKitButtonSearchBinding
+import com.izhxx.navuikit.databinding.NavUikitButtonSearchBinding
 
 class NavUiKitButtonSearch : ConstraintLayout {
 
@@ -12,7 +12,6 @@ class NavUiKitButtonSearch : ConstraintLayout {
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) {
         readAttributes(attrs)
     }
-
     constructor(context: Context, attrs: AttributeSet, defStyleAttr: Int) : super(
         context,
         attrs,
@@ -23,17 +22,13 @@ class NavUiKitButtonSearch : ConstraintLayout {
 
     var buttonHint: String
         get() = binding.navUiKitButtonSearchButton.hint.toString()
-        set(value) {
-            binding.navUiKitButtonSearchButton.hint = value
-        }
+        set(value) { binding.navUiKitButtonSearchButton.hint = value }
     var buttonText: String
         get() = binding.navUiKitButtonSearchButton.text.toString()
-        set(value) {
-            binding.navUiKitButtonSearchButton.text = value
-        }
+        set(value) { binding.navUiKitButtonSearchButton.text = value }
 
-    private val binding: NavUiKitButtonSearchBinding =
-        NavUiKitButtonSearchBinding.inflate(LayoutInflater.from(context), this)
+    private val binding: NavUikitButtonSearchBinding =
+        NavUikitButtonSearchBinding.inflate(LayoutInflater.from(context), this)
 
     private fun readAttributes(attrs: AttributeSet) {
         val attrsArray = context.obtainStyledAttributes(attrs, R.styleable.NavUiKitButtonSearch)

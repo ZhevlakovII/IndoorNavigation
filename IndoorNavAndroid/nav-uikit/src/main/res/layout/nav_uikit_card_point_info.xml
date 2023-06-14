@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/navUiKitCardPointInfoCardView"
+        style="@style/IndoorNavigation.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginVertical="@dimen/nav_uikit_default_medium_vertical_margin"
+        android:layout_marginHorizontal="@dimen/nav_uikit_default_medium_horizontal_margin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="@dimen/nav_uikit_default_medium_horizontal_padding"
+            android:paddingVertical="@dimen/nav_uikit_default_medium_vertical_padding"
+            android:clipToPadding="false"
+            android:clipChildren="false">
+
+            <TextView
+                android:id="@+id/navUiKitCardPointInfoTitle"
+                style="@style/IndoorNavigation.TextView.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/nav_uikit_info_text" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/navUiKitCardPointInfoButton"
+                style="@style/IndoorNavigation.FilledButton"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/nav_uikit_default_button_height"
+                android:layout_marginTop="@dimen/nav_uikit_default_medium_vertical_margin"
+                android:text="@string/nav_uikit_info_text"
+                app:icon="@drawable/nav_uikit_ic_arrow_24dp"
+                app:iconTint="@color/nav_uikit_white"
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</merge>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navClientSearchRecyclerItemTextView"
+    style="@style/IndoorNavigation.TextView.Body"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:drawablePadding="@dimen/nav_uikit_default_medium_horizontal_padding"
+    android:paddingVertical="@dimen/nav_uikit_default_medium_vertical_padding"
+    app:drawableStartCompat="@drawable/nav_uikit_ic_history_24dp"
+    app:drawableTint="@color/nav_uikit_grayscale_icons"
+    tools:viewBindingIgnore="true" />

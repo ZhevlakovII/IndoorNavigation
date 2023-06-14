@@ -13,11 +13,11 @@ buildscript {
         kspVersion = '1.8.10-1.0.9'
 
         //KTX
-        ktxVersion = '1.9.0'
+        ktxVersion = '1.10.1'
 
         //XML
         appcompatVersion = '1.6.1'
-        materialVersion = '1.8.0'
+        materialVersion = '1.9.0'
 
         //Compose
         mapComposeVersion = '2.4.1'
@@ -25,7 +25,7 @@ buildscript {
         composeCompilerVersion = '1.4.3'
 
         //Navigation
-        navVersion = '2.5.3'
+        navVersion = '2.6.0'
 
         //database
         roomVersion = '2.5.0'
@@ -35,7 +35,7 @@ buildscript {
         rxAndroidVersion = '2.1.1'
 
         //dagger
-        daggerVersion = '2.45'
+        daggerVersion = '2.46'
     }
 
     applyRepoManager(repositories)
@@ -45,7 +45,7 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.1.0-alpha09'
+        classpath 'com.android.tools.build:gradle:8.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 

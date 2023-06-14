@@ -1,0 +1,32 @@
+plugins {
+    id "org.jetbrains.kotlin.kapt"
+}
+
+apply from: "$rootProject.rootDir/scripts/settings.gradle"
+apply from: "$rootProject.rootDir/scripts/common.gradle"
+
+android {
+    namespace 'com.izhxx.navshared'
+
+    buildTypes {
+        debug {}
+        release {}
+    }
+
+    buildFeatures {
+        viewBinding false
+    }
+}
+
+dependencies {
+
+    implementation "androidx.core:core-ktx:$ktxVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+
+    //rxjava
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+
+    //dagger
+    implementation "com.google.dagger:dagger:$daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$daggerVersion"
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:clipChildren="false"
+    tools:context=".presentation.map.MapFragment">
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/navClientMapCompose"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.izhxx.navuikit.NavUiKitButtonSearch
+        android:id="@+id/navClientMapButtonSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/nav_uikit_default_medium_horizontal_padding"
+        android:paddingVertical="@dimen/nav_uikit_default_medium_vertical_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:searchButtonHint="@string/nav_client_map_button_search_hint" />
+
+    <com.izhxx.navuikit.NavUiKitCardPointInfo
+        android:id="@+id/navClientMapCardPointInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardPointInfoButtonIcon="@drawable/nav_uikit_ic_arrow_24dp"
+        app:cardPointInfoButtonIconColor="@color/nav_uikit_white"
+        app:cardPointInfoButtonText="@string/nav_client_map_button_direction_hint"
+        app:cardPointInfoTitleText="@string/nav_uikit_info_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
