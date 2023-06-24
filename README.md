@@ -1,6 +1,9 @@
 ![Language badge](https://img.shields.io/badge/Language-Kotlin-blue?style=flat=appveyor)
 # Current version
-Stable 0.1.0
+### Client
+Beta 0.2.0
+### Creator
+Alpha 0.1.0
 
 # Language
 1. [Русский](#русский)
