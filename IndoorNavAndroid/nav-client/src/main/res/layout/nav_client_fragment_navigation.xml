@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.izhxx.navuikit.NavUiKitPointsInput
+        android:id="@+id/navClientNavigationPointsInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/nav_uikit_default_large_padding"
+        app:currentPositionHint="@string/nav_client_navigation_pointsinput_current_position_hint"
+        app:destinationHint="@string/nav_client_navigation_pointsinput_destination_hint"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.compose.ui.platform.ComposeView
+        android:id="@+id/navClientNavigationCompose"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toBottomOf="@id/navClientNavigationPointsInput"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <com.izhxx.navuikit.NavUiKitCardPointInfo
+        android:id="@+id/navClientNavigationCardPointInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardPointInfoTitleText="@string/nav_client_navigation_time_text"
+        app:cardPointInfoButtonText="@string/nav_client_navigation_start"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

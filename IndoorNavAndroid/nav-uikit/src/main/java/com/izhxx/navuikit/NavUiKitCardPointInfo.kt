@@ -3,10 +3,10 @@ package com.izhxx.navuikit
 import android.content.Context
 import android.util.AttributeSet
 import android.view.LayoutInflater
-import com.google.android.material.card.MaterialCardView
-import com.izhxx.navuikit.databinding.NavUiKitCardPointInfoBinding
+import androidx.constraintlayout.widget.ConstraintLayout
+import com.izhxx.navuikit.databinding.NavUikitCardPointInfoBinding
 
-class NavUiKitCardPointInfo : MaterialCardView {
+class NavUiKitCardPointInfo : ConstraintLayout {
 
     constructor(context: Context) : super(context)
     constructor(context: Context, attrs: AttributeSet) : super(context, attrs) { readAttributes(attrs) }
@@ -29,8 +29,8 @@ class NavUiKitCardPointInfo : MaterialCardView {
             binding.navUiKitCardPointInfoButton.text = value
         }
 
-    private var binding: NavUiKitCardPointInfoBinding =
-        NavUiKitCardPointInfoBinding.inflate(LayoutInflater.from(context), this)
+    private var binding: NavUikitCardPointInfoBinding =
+        NavUikitCardPointInfoBinding.inflate(LayoutInflater.from(context), this)
 
     private fun readAttributes(attrs: AttributeSet) {
         val attrsArray = context.obtainStyledAttributes(attrs, R.styleable.NavUiKitCardPointInfo)

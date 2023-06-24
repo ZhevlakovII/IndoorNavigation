@@ -31,8 +31,10 @@ android {
 }
 
 dependencies {
+    implementation project(':nav-client')
+    implementation project(':nav-creator')
 
-    implementation project(':nav-ui')
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "com.google.android.material:material:$materialVersion"
 }

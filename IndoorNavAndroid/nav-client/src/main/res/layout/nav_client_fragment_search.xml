@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.izhxx.navuikit.NavUiKitCustomEditText
+        android:id="@+id/navClientSearchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="@dimen/nav_uikit_default_medium_horizontal_padding"
+        android:paddingTop="@dimen/nav_uikit_default_medium_vertical_padding"
+        app:customEditTextHint="@string/nav_client_search_edittext_hint"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.divider.MaterialDivider
+        android:id="@+id/navClientSearchDivider"
+        android:layout_width="match_parent"
+        android:layout_height="12dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navClientSearchEditText" />
+
+    <TextView
+        android:id="@+id/navClientSearchTextViewTitleResults"
+        style="@style/IndoorNavigation.TextView.Headline"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/nav_uikit_default_large_vertical_margin"
+        android:paddingHorizontal="@dimen/nav_uikit_default_medium_horizontal_padding"
+        android:text="@string/nav_uikit_info_text"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/navClientSearchDivider" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/navClientSearchRecyclerViewSearchHistory"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/nav_uikit_default_medium_horizontal_padding"
+        android:paddingTop="@dimen/nav_uikit_default_medium_vertical_padding"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toBottomOf="@id/navClientSearchTextViewTitleResults" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/navClientSearchRecyclerViewSearchedItems"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingHorizontal="@dimen/nav_uikit_default_medium_horizontal_padding"
+        android:paddingTop="@dimen/nav_uikit_default_medium_vertical_padding"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintTop_toBottomOf="@id/navClientSearchTextViewTitleResults" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

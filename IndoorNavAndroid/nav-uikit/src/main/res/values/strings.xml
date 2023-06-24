@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="nav_ui_kit_info_text">Some specified text</string>
+    <string name="nav_uikit_info_text">Some specified text</string>
 </resources>

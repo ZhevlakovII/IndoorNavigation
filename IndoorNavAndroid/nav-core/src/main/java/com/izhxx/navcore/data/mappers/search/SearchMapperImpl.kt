@@ -1,19 +1,19 @@
 package com.izhxx.navcore.data.mappers.search
 
-import com.izhxx.navcore.data.model.SearchRequestEntity
-import com.izhxx.navcore.domain.model.SearchRequest
+import com.izhxx.navcore.data.model.SearchHistoryEntity
+import com.izhxx.navcore.domain.model.SearchHistory
 
 internal class SearchMapperImpl() : SearchMapper {
-    override fun toEntity(request: SearchRequest): SearchRequestEntity =
-        SearchRequestEntity(
+    override fun toEntity(request: SearchHistory): SearchHistoryEntity =
+        SearchHistoryEntity(
             request.requestId,
             request.locationId
         )
 
 
-    override fun toModel(request: List<SearchRequestEntity>): List<SearchRequest> =
+    override fun toModel(request: List<SearchHistoryEntity>): List<SearchHistory> =
         request.map {
-            SearchRequest(
+            SearchHistory(
                 it.requestId,
                 it.locationId
             )

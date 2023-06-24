@@ -2,11 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
-        android:icon="@drawable/nav_ui_kit_ic_ar_24dp"
+        android:icon="@drawable/nav_uikit_ic_ar_24dp"
         android:label="@string/app_name"
-        android:theme="@style/Theme.IndoorNavigation.Splash">
+        android:theme="@style/IndoorNavigation">
         <activity
-            android:name=".SplashActivity"
+            android:name=".StartActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

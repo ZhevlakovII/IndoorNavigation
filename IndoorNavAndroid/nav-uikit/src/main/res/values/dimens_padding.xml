@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Horizontal-->
+    <dimen name="nav_uikit_default_small_horizontal_padding">12dp</dimen>
+    <dimen name="nav_uikit_default_medium_horizontal_padding">16dp</dimen>
+    <dimen name="nav_uikit_default_large_horizontal_padding">20dp</dimen>
+
+    <!--Vertical-->
+    <dimen name="nav_uikit_default_small_vertical_padding">4dp</dimen>
+    <dimen name="nav_uikit_default_medium_vertical_padding">8dp</dimen>
+    <dimen name="nav_uikit_default_large_vertical_padding">16dp</dimen>
+
+    <!--Full-->
+    <dimen name="nav_uikit_default_small_padding">8dp</dimen>
+    <dimen name="nav_uikit_default_medium_padding">16dp</dimen>
+    <dimen name="nav_uikit_default_large_padding">24dp</dimen>
+
+</resources>

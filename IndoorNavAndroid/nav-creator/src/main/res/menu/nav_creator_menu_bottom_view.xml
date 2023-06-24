@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/navCreatorMapFragment"
+        android:icon="@drawable/nav_uikit_ic_map_24dp"
+        android:title="@string/nav_creator_fragment_map_name" />
+
+    <item
+        android:id="@+id/navCreatorSettingsFragmnet"
+        android:icon="@drawable/nav_uikit_ic_settings_24dp"
+        android:title="@string/nav_creator_fragment_settings_name" />
+
+</menu>
