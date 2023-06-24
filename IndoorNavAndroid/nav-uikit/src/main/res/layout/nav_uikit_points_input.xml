@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:parentTag="androidx.constraintlayout.widget.ConstraintLayout">
+
+    <ImageButton
+        android:id="@+id/navUiKitPointsInputButtonBack"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/nav_uikit_ic_back_24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="ContentDescription,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/navUiKitPointsInputButtonSelectCurrentPosition"
+        style="@style/IndoorNavigation.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:paddingHorizontal="@dimen/nav_uikit_default_small_horizontal_padding"
+        android:textColor="@color/nav_uikit_text_primary"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@id/navUiKitPointsInputButtonBack"
+        app:layout_constraintEnd_toStartOf="@id/navUiKitPointsInputImageViewCurrentPosition"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/navUiKitPointsInputButtonSelectDestination"
+        style="@style/IndoorNavigation.OutlinedButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:paddingHorizontal="@dimen/nav_uikit_default_small_horizontal_padding"
+        android:textColor="@color/nav_uikit_text_primary"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toStartOf="@id/navUiKitPointsInputButtonSelectCurrentPosition"
+        app:layout_constraintEnd_toEndOf="@id/navUiKitPointsInputButtonSelectCurrentPosition"
+        app:layout_constraintTop_toBottomOf="@id/navUiKitPointsInputButtonSelectCurrentPosition" />
+
+    <ImageView
+        android:id="@+id/navUiKitPointsInputImageViewCurrentPosition"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/nav_uikit_ic_userpoint_24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/navUiKitPointsInputButtonSelectCurrentPosition"
+        app:layout_constraintBottom_toBottomOf="@id/navUiKitPointsInputButtonSelectCurrentPosition"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/navUiKitPointsInputImageViewDestination"
+        android:layout_width="20dp"
+        android:layout_height="24dp"
+        android:background="@drawable/nav_uikit_ic_map_pin_24dp"
+        app:layout_constraintStart_toStartOf="@id/navUiKitPointsInputImageViewCurrentPosition"
+        app:layout_constraintEnd_toEndOf="@id/navUiKitPointsInputImageViewCurrentPosition"
+        app:layout_constraintTop_toTopOf="@id/navUiKitPointsInputButtonSelectDestination"
+        app:layout_constraintBottom_toBottomOf="@id/navUiKitPointsInputButtonSelectDestination"
+        tools:ignore="ContentDescription" />
+
+</merge>

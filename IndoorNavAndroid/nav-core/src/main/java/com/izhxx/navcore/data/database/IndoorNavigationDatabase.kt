@@ -8,11 +8,11 @@ import com.izhxx.navcore.data.dao.LocationDao
 import com.izhxx.navcore.data.dao.SearchDao
 import com.izhxx.navcore.data.dao.SettingsDao
 import com.izhxx.navcore.data.model.LocationEntity
-import com.izhxx.navcore.data.model.SearchRequestEntity
+import com.izhxx.navcore.data.model.SearchHistoryEntity
 import com.izhxx.navcore.data.model.UserSettingsEntity
 
 @Database(
-    entities = [LocationEntity::class, SearchRequestEntity::class, UserSettingsEntity::class],
+    entities = [LocationEntity::class, SearchHistoryEntity::class, UserSettingsEntity::class],
     version = 1,
     exportSchema = false
 )

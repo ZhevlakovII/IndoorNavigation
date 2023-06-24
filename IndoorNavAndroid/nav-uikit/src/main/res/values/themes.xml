@@ -3,9 +3,9 @@
 
     <style name="IndoorNavigation" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!--Color-->
-        <item name="colorPrimary">@color/nav_ui_kit_interface_primary</item>
-        <item name="colorSecondary">@color/nav_ui_kit_interface_secondary</item>
-        <item name="android:colorBackground">@color/nav_ui_kit_background</item>
+        <item name="colorPrimary">@color/nav_uikit_interface_primary</item>
+        <item name="colorSecondary">@color/nav_uikit_interface_secondary</item>
+        <item name="android:colorBackground">@color/nav_uikit_background</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
 
         <!--Text-->

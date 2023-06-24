@@ -1,5 +1,7 @@
 package com.izhxx.navcore.domain.model.location
 
+import java.io.Serializable
+
 /**
  * Дата-класс для координа локации. Применяется на карту и зависит от её размеров
  * @param startAxisX - Стартовая координата по оХ/оY
@@ -16,8 +18,4 @@ data class MapCoordinates(
     val endAxisY: Double,
     var currentAxisX: Double? = null,
     var currentAxisY: Double? = null
-) {
-    fun matchAxisX(x: Double): Boolean = x in startAxisX..endAxisX
-    fun matchAxisY(y: Double): Boolean = y in startAxisY..endAxisY
-
-}
+) : Serializable

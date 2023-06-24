@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Horizontal-->
+    <dimen name="nav_uikit_default_small_horizontal_margin">12dp</dimen>
+    <dimen name="nav_uikit_default_medium_horizontal_margin">16dp</dimen>
+    <dimen name="nav_uikit_default_large_horizontal_margin">20dp</dimen>
+
+    <!--Vertical-->
+    <dimen name="nav_uikit_default_small_vertical_margin">4dp</dimen>
+    <dimen name="nav_uikit_default_medium_vertical_margin">8dp</dimen>
+    <dimen name="nav_uikit_default_large_vertical_margin">16dp</dimen>
+
+    <!--Full-->
+    <dimen name="nav_uikit_default_small_margin">8dp</dimen>
+    <dimen name="nav_uikit_default_medium_margin">16dp</dimen>
+    <dimen name="nav_uikit_default_large_margin">24dp</dimen>
+
+</resources>

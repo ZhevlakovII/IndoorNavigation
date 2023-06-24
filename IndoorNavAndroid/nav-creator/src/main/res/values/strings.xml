@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Fragment name-->
+    <string name="nav_creator_fragment_map_name">Map</string>
+    <string name="nav_creator_fragment_settings_name">Settings</string>
+    <string name="nav_creator_button_back_text">To main menu</string>
+
+</resources>

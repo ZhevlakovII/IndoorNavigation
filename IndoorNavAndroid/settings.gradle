@@ -1,4 +1,6 @@
 include ":app"
 include ":nav-core"
-include ":nav-ui"
+include ':nav-client'
 include ":nav-uikit"
+include ':nav-creator'
+include ':nav-shared'
