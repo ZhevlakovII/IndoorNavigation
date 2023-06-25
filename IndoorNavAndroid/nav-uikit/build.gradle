@@ -22,6 +22,7 @@ android {
 dependencies {
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.appcompat:appcompat-resources:$appcompatVersion"
     implementation "com.google.android.material:material:$materialVersion"
 
     //Compose
