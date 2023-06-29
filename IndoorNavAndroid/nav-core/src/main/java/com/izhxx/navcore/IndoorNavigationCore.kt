@@ -11,6 +11,7 @@ import com.izhxx.navcore.data.repository.SettingsRepositoryImpl
 import com.izhxx.navcore.domain.repository.LocationRepository
 import com.izhxx.navcore.domain.repository.SearchRepository
 import com.izhxx.navcore.domain.repository.SettingsRepository
+import com.izhxx.navcore.utils.getNullableCoreMessage
 
 class IndoorNavigationCore {
 
@@ -18,7 +19,9 @@ class IndoorNavigationCore {
         private var coreInstance: IndoorNavigationCore? = null
 
         @JvmStatic
-        fun getInstance(): IndoorNavigationCore = requireNotNull(coreInstance)
+        fun getInstance(): IndoorNavigationCore = requireNotNull(coreInstance) {
+            getNullableCoreMessage()
+        }
 
         @JvmStatic
         fun initialize(context: Context) {

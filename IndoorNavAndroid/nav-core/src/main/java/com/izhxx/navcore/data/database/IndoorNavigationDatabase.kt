@@ -21,15 +21,16 @@ internal abstract class IndoorNavigationDatabase : RoomDatabase() {
     companion object {
         private const val INDOORNAVIGATION_DATABASE_NAME = "indoornavigation_database"
 
-        @Volatile private var instance: IndoorNavigationDatabase? = null
+        @Volatile
+        @JvmStatic
+        private var instance: IndoorNavigationDatabase? = null
 
         fun getInstance(context: Context): IndoorNavigationDatabase {
-            return instance ?: synchronized(this) {
+            synchronized(this) {
                 return instance ?: buildDatabase(context).also { instance = it }
             }
         }
 
-        //add worker to move data with json file
         private fun buildDatabase(context: Context): IndoorNavigationDatabase =
             Room.databaseBuilder(
                 context,
