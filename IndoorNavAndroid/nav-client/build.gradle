@@ -30,6 +30,7 @@ dependencies {
 
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.appcompat:appcompat-resources:$appcompatVersion"
     implementation "com.google.android.material:material:$materialVersion"
 
     //Compose
@@ -51,8 +52,4 @@ dependencies {
     //dagger
     implementation "com.google.dagger:dagger:$daggerVersion"
     kapt "com.google.dagger:dagger-compiler:$daggerVersion"
-
-//    testImplementation "junit:junit:4.13.2"
-//    androidTestImplementation "androidx.test.ext:junit:1.1.5"
-//    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
 }

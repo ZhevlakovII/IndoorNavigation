@@ -9,8 +9,8 @@ buildscript {
 
     ext {
         //Studio
-        kotlinVersion = '1.8.10'
-        kspVersion = '1.8.10-1.0.9'
+        kotlinVersion = '1.8.21'
+        kspVersion = '1.8.21-1.0.11'
 
         //KTX
         ktxVersion = '1.10.1'
@@ -20,15 +20,15 @@ buildscript {
         materialVersion = '1.9.0'
 
         //Compose
-        mapComposeVersion = '2.4.1'
-        composeBomVersion = '2023.01.00'
-        composeCompilerVersion = '1.4.3'
+        mapComposeVersion = '2.7.1'
+        composeBomVersion = '2023.05.01'
+        composeCompilerVersion = '1.4.7'
 
         //Navigation
         navVersion = '2.6.0'
 
         //database
-        roomVersion = '2.5.0'
+        roomVersion = '2.5.2'
 
         //rxjava
         rxJavaVersion = '2.2.21'

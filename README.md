@@ -1,7 +1,7 @@
 ![Language badge](https://img.shields.io/badge/Language-Kotlin-blue?style=flat=appveyor)
 # Current version
 ### Client
-Beta 0.2.0
+Beta 0.2.1
 ### Creator
 Alpha 0.1.0
 

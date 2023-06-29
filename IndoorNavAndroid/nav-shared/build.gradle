@@ -22,6 +22,7 @@ dependencies {
 
     implementation "androidx.core:core-ktx:$ktxVersion"
     implementation "androidx.appcompat:appcompat:$appcompatVersion"
+    implementation "androidx.appcompat:appcompat-resources:$appcompatVersion"
 
     //rxjava
     implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
