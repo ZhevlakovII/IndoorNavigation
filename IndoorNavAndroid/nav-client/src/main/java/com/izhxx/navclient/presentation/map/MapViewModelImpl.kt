@@ -17,7 +17,6 @@ import com.izhxx.navclient.domain.model.error.ErrorModel
 import com.izhxx.navclient.domain.model.error.ErrorType
 import com.izhxx.navclient.domain.usecase.location.LocationUseCase
 import com.izhxx.navclient.domain.usecase.shared.SharedDataUseCase
-import com.izhxx.navclient.utils.mapProvider
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ovh.plrapps.mapcompose.api.addLayer
@@ -30,10 +29,9 @@ import javax.inject.Inject
 internal class MapViewModelImpl @Inject constructor(
     private val locationUseCase: LocationUseCase,
     private val sharedDataUseCase: SharedDataUseCase,
+    private val tilesProvider: TileStreamProvider
 ) : NavViewModel(), MapViewModel {
 
-    private val mapTiles: TileStreamProvider
-        get() = mapProvider()
     override val mapState: MapState by mutableStateOf(
         MapState(
             levelCount = 5,
@@ -41,11 +39,11 @@ internal class MapViewModelImpl @Inject constructor(
             fullHeight = 3580,
             tileSize = 256
         ).apply {
-            addLayer(mapTiles)
+            addLayer(tilesProvider)
             onTap { x, y -> onMapTap(x, y) }
         }
     )
-    private var locations: MutableList<Location> = mutableListOf()
+    private var locations: List<Location> = mutableListOf()
 
     override val isLoading = MutableLiveData<Boolean>()
     override val error = MutableLiveData<ErrorModel>()
@@ -56,10 +54,11 @@ internal class MapViewModelImpl @Inject constructor(
 
     override fun onStart() {
         openNavigationScreen.value = false
-        if (sharedDataUseCase.getSharedData().locationList.isNullOrEmpty()) {
+        val locationsData = sharedDataUseCase.getSharedData().locationList
+        if (locationsData.isNullOrEmpty()) {
             getLocations()
         } else {
-            locations = sharedDataUseCase.getSharedData().locationList as MutableList<Location>
+            locations = locationsData
         }
     }
 
@@ -121,7 +120,7 @@ internal class MapViewModelImpl @Inject constructor(
             .doOnSubscribe { isLoading.value = true }
             .doFinally { isLoading.value = false }
             .subscribe(
-                { locations = it as MutableList<Location> },
+                { locations = it },
                 {
                     error.value = ErrorModel(
                         errorMessage = it.localizedMessage

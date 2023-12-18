@@ -9,7 +9,7 @@ import com.izhxx.navcreator.databinding.NavCreatorFragmentSettingsBinding
 import com.izhxx.navcreator.utlis.ext.daggerComponent
 import com.izhxx.navshared.base.NavFragment
 
-class SettingsFragment : NavFragment() {
+internal class SettingsFragment : NavFragment() {
 
     private var _binding: NavCreatorFragmentSettingsBinding? = null
     private val binding

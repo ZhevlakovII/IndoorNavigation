@@ -6,6 +6,7 @@ import com.izhxx.navcore.IndoorNavigationCore
 import com.izhxx.navclient.di.ApplicationComponent
 import com.izhxx.navclient.di.DaggerApplicationComponent
 import com.izhxx.navclient.presentation.ClientActivity
+import com.izhxx.navshared.utils.getTileStreamProvider
 
 class IndoorNavigationClient {
 
@@ -33,6 +34,7 @@ class IndoorNavigationClient {
             daggerComponent = DaggerApplicationComponent
                 .builder()
                 .bindContext(context = context)
+                .bindTileProvider(getTileStreamProvider(context = context))
                 .build()
         }
     }

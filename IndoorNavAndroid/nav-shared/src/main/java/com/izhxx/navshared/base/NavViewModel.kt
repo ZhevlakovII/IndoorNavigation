@@ -25,9 +25,9 @@ abstract class NavViewModel : ViewModel(), DefaultLifecycleObserver {
         viewModelDisposable.clear()
     }
 
-    override fun onPause(owner: LifecycleOwner) {
-        super.onPause(owner)
-        onCleared()
+    override fun onStop(owner: LifecycleOwner) {
+        super.onStop(owner)
+        viewModelDisposable.cancel()
     }
 
 }

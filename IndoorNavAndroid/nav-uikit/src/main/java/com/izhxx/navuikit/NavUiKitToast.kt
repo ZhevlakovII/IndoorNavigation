@@ -55,7 +55,7 @@ class NavUiKitToast private constructor() {
 
         private var duration: Long = DURATION_SHORT
         private var message: String = String()
-        @DrawableRes protected open var icon: Int = 0
+        @DrawableRes protected open var iconResource: Int = 0
 
         fun duration(duration: Long): Builder {
             this.duration = duration
@@ -66,13 +66,13 @@ class NavUiKitToast private constructor() {
             return this
         }
         fun drawable(@DrawableRes drawableRes: Int): Builder {
-            this.icon = drawableRes
+            this.iconResource = drawableRes
             return this
         }
         fun show() = build(
             duration = duration,
             message = message,
-            icon = icon,
+            icon = iconResource,
             rootView = rootView
         )
 
@@ -82,16 +82,16 @@ class NavUiKitToast private constructor() {
         fun info(): Builder = InfoToast(rootView)
 
         internal inner class SuccessToast(rootView: View) : Builder(rootView) {
-            override var icon: Int = R.drawable.nav_uikit_ic_success
+            override var iconResource: Int = R.drawable.nav_uikit_ic_success
         }
         internal inner class WarningToast(rootView: View) : Builder(rootView) {
-            override var icon: Int = R.drawable.nav_uikit_ic_warning
+            override var iconResource: Int = R.drawable.nav_uikit_ic_warning
         }
         internal inner class ErrorToast(rootView: View) : Builder(rootView) {
-            override var icon: Int = R.drawable.nav_uikit_ic_error
+            override var iconResource: Int = R.drawable.nav_uikit_ic_error
         }
         internal inner class InfoToast(rootView: View) : Builder(rootView) {
-            override var icon: Int = R.drawable.nav_uikit_ic_info
+            override var iconResource: Int = R.drawable.nav_uikit_ic_info
         }
     }
 }

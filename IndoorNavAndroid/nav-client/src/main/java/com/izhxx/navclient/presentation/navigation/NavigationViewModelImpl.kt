@@ -11,7 +11,6 @@ import com.izhxx.navclient.domain.model.error.ErrorModel
 import com.izhxx.navclient.domain.model.error.ErrorType
 import com.izhxx.navclient.domain.usecase.route.RouteUseCase
 import com.izhxx.navclient.domain.usecase.shared.SharedDataUseCase
-import com.izhxx.navclient.utils.mapProvider
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 import ovh.plrapps.mapcompose.api.addLayer
@@ -22,10 +21,9 @@ import javax.inject.Inject
 internal class NavigationViewModelImpl @Inject constructor(
     private val routeUseCase: RouteUseCase,
     private val sharedDataUseCase: SharedDataUseCase,
+    private val tilesProvider: TileStreamProvider
 ) : NavViewModel(), NavigationViewModel {
 
-    private val mapTiles: TileStreamProvider
-        get() = mapProvider()
     override val mapState: MapState by mutableStateOf(
         MapState(
             levelCount = 5,
@@ -33,7 +31,7 @@ internal class NavigationViewModelImpl @Inject constructor(
             fullHeight = 3580,
             tileSize = 256
         ).apply {
-            addLayer(mapTiles)
+            addLayer(tilesProvider)
         }
     )
 

@@ -8,6 +8,7 @@ import com.izhxx.navclient.presentation.route.RouteFragment
 import com.izhxx.navclient.presentation.search.SearchFragment
 import dagger.BindsInstance
 import dagger.Component
+import ovh.plrapps.mapcompose.core.TileStreamProvider
 import javax.inject.Singleton
 
 @Component(modules = [ApplicationModule::class])
@@ -19,6 +20,8 @@ internal interface ApplicationComponent {
 
         @BindsInstance
         fun bindContext(context: Context): Builder
+        @BindsInstance
+        fun bindTileProvider(tilesProvider: TileStreamProvider): Builder
 
         fun build(): ApplicationComponent
     }
